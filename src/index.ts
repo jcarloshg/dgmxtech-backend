@@ -4,7 +4,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/', (_req, res) => {
-    res.status(200).send("express with typescript!!" + new Date() + "HOLA")
+    res.status(200).send("express with typescript!!" + new Date())
 })
 
 app.listen(3000, () => {
