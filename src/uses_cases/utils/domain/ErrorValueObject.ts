@@ -1,4 +1,4 @@
-import { CustomResponseError } from "./CustomResponse"
+import { CustomResponse } from "./CustomResponse"
 
 export class ErrorValueObject extends Error {
 
@@ -7,13 +7,9 @@ export class ErrorValueObject extends Error {
         this.name = "ErrorValueObject"
     }
 
-    static generateCustomResponse(message: string): CustomResponseError<undefined> {
-        const customResponseError: CustomResponseError<undefined> = {
-            type: "INVALID_DATA",
-            status: 404,
-            message: message
-        }
-        return customResponseError;
+    static generateCustomResponse(message: string): CustomResponse<undefined> {
+        const CustomResponse: CustomResponse<undefined> = { status: 400, message: message }
+        return CustomResponse;
     }
 
 }

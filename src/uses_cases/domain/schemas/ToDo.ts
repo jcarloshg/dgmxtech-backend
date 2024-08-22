@@ -4,3 +4,8 @@ export interface ToDo {
     description: string,
     completed: boolean,
 }
+
+
+export interface ToDoDataToCreate extends Pick<ToDo, "title" | "description"> {
+    completed: false,
+}
