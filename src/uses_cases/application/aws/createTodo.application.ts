@@ -1,9 +1,9 @@
 // infrastructure
 import { CreateToDoAWS } from "../../infrastructure/aws/ToDo/CreateToDo.aws";
 // domain
-import { CustomResponse } from "../../utils/domain/CustomResponse";
-import { TodoTitleValueObject } from "../../utils/domain/TodoTitleValueObject";
-import { TodoDescriptionValueObject } from "../../utils/domain/TodoDescriptionValueObject";
+import { CustomResponse } from "../../utils/erros/CustomResponse";
+import { TodoTitleValueObject } from "../../utils/valuObjects/TodoTitleValueObject";
+import { TodoDescriptionValueObject } from "../../utils/valuObjects/TodoDescriptionValueObject";
 import { ToDo, ToDoDataToCreate } from "../../domain/schemas/ToDo";
 // utils
 import { catchResponseError } from "../../../express/utils/getResponseError";

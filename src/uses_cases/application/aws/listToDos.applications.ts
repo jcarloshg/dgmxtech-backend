@@ -1,7 +1,7 @@
 // infrastructure
 import { ListToDosAWS } from "../../infrastructure/aws/ToDo/ListToDos.aws";
 // domain
-import { CustomResponse } from "../../utils/domain/CustomResponse";
+import { CustomResponse } from "../../utils/erros/CustomResponse";
 import { ToDo } from "../../domain/schemas/ToDo";
 // utils
 import { catchResponseError } from "../../../express/utils/getResponseError";

@@ -1,4 +1,4 @@
-import { ErrorValueObject } from './Error.ValueObject';
+import { ErrorValueObject } from '../erros/Error.ValueObject';
 import { ValueObject } from './ValueObject';
 
 export class UUIDValueObject extends ValueObject<string> {

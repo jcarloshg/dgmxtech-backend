@@ -1,9 +1,9 @@
 import { GetToDoByUUIDAWS } from "../../infrastructure/aws/ToDo/GetToDoByUUID.aws";
 // domain
 import { ToDo } from "../../domain/schemas/ToDo";
-import { CustomResponse } from "../../utils/domain/CustomResponse";
-import { UUIDValueObject } from "../../utils/domain/UUID.ValueObject";
-import { ErrorEntityNotExits } from "../../utils/domain/Error.EntityNotExits";
+import { CustomResponse } from "../../utils/erros/CustomResponse";
+import { UUIDValueObject } from "../../utils/valuObjects/UUID.ValueObject";
+import { ErrorEntityNotExits } from "../../utils/erros/Error.EntityNotExits";
 // utils
 import { catchResponseError } from "../../../express/utils/getResponseError";
 import { ToggleByUUIDAWS } from "../../infrastructure/aws/ToDo/ToggleByUUID.aws";

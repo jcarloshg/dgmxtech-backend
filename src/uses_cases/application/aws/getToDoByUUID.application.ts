@@ -3,8 +3,8 @@
 import { GetToDoByUUIDAWS } from '../../infrastructure/aws/ToDo/GetToDoByUUID.aws';
 // domain
 import { ToDo } from '../../domain/schemas/ToDo';
-import { CustomResponse } from '../../utils/domain/CustomResponse';
-import { UUIDValueObject } from '../../utils/domain/UUID.ValueObject';
+import { CustomResponse } from '../../utils/erros/CustomResponse';
+import { UUIDValueObject } from '../../utils/valuObjects/UUID.ValueObject';
 // utils
 import { catchResponseError } from '../../../express/utils/getResponseError';
 

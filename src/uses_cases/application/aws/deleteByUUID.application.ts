@@ -3,9 +3,9 @@ import { catchResponseError } from "../../../express/utils/getResponseError";
 import { DeleteByUUIDAWS } from "../../infrastructure/aws/ToDo/DeleteByUUID.aws";
 import { GetToDoByUUIDAWS } from "../../infrastructure/aws/ToDo/GetToDoByUUID.aws";
 // domain
-import { CustomResponse } from "../../utils/domain/CustomResponse";
-import { ErrorEntityNotExits } from "../../utils/domain/Error.EntityNotExits";
-import { UUIDValueObject } from "../../utils/domain/UUID.ValueObject";
+import { CustomResponse } from "../../utils/erros/CustomResponse";
+import { ErrorEntityNotExits } from "../../utils/erros/Error.EntityNotExits";
+import { UUIDValueObject } from "../../utils/valuObjects/UUID.ValueObject";
 
 export const deleteByUUIDApplication = async (uuid: string): Promise<CustomResponse<undefined>> => {
 
