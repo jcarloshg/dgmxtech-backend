@@ -17,9 +17,9 @@ export class UUIDValueObject extends ValueObject<string> {
     }
 
 
-    private _isValid(uuid: string): boolean {
+    private _isValid(value: string): boolean {
         const regex = new RegExp('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$');
-        return regex.test(uuid);
+        return regex.test(value);
     }
 
 

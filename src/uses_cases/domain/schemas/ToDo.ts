@@ -6,6 +6,6 @@ export interface ToDo {
 }
 
 
-export interface ToDoDataToCreate extends Pick<ToDo, "title" | "description"> {
+export interface ToDoDataToCreate extends ToDo {
     completed: false,
 }

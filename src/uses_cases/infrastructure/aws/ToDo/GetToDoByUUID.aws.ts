@@ -1,9 +1,12 @@
 
+// aws
 import { GetItemCommand, } from "@aws-sdk/client-dynamodb";
-import { GetToDoByUUIDRepository } from "../../../domain/repository/Todo/GetToDoByUUID.repository";
-import { ToDo } from "../../../domain/schemas/ToDo";
 import { DynamoDBClientInitialized } from "../config/config.DinamoDB";
 import { AWS_DYNAMODB_TODO_TABLE_NAME } from "../config/awsKeys";
+// domain
+import { GetToDoByUUIDRepository } from "../../../domain/repository/Todo/GetToDoByUUID.repository";
+import { ToDo } from "../../../domain/schemas/ToDo";
+// utils
 import { itemToModel } from "../utils/itemToObject";
 
 
