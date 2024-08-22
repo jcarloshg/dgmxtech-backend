@@ -23,9 +23,12 @@ export class GetToDoByUUIDAWS implements GetToDoByUUIDRepository {
 
     const response = await DynamoDBClientInitialized.send(getItemCommand);
 
-    const todoItem = JSON.parse(JSON.stringify(response.Item));
+    const item = response.Item
 
-    return itemToModel<ToDo>(todoItem)
+    if (item === undefined) return null
+
+    return itemToModel<ToDo>(item)
+
   }
 
 }

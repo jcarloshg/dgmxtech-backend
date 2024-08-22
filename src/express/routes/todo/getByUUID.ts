@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import { GetToDoByUUIDAWS } from '../../../uses_cases/infrastructure/aws/ToDo/GetToDoByUUID.aws'
 import { UUIDValueObject } from '../../../uses_cases/utils/domain/UUID.ValueObject';
 import { catchResponseError } from '../../utils/getResponseError';
+import { CustomResponseNotFound } from '../../../uses_cases/utils/domain/CustomResponse';
 
 
 export const getByUUID = async (req: Request, res: Response) => {
@@ -10,12 +11,14 @@ export const getByUUID = async (req: Request, res: Response) => {
 
     try {
 
+        // valid el uuid
         const uuidValidated = new UUIDValueObject(uuid);
 
+        // make the search by uuid validated
         const getToDoByIDAWS = new GetToDoByUUIDAWS();
         const todo = await getToDoByIDAWS.run(uuidValidated.value);
 
-        if (!todo) return res.status(404).send("not found");
+        if (!todo) return res.status(CustomResponseNotFound.status).send(CustomResponseNotFound);
 
         res.status(200).send(todo);
 

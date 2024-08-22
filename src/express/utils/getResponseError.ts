@@ -1,15 +1,11 @@
 
+import { CustomResponseError } from "../../uses_cases/utils/domain/CustomResponse"
 import { ErrorValueObject } from "../../uses_cases/utils/domain/ErrorValueObject"
 
-export interface CustomResponseError {
-    status: number,
-    type: "INVALID_DATA" | "UNKNOWN",
-    message: "UNKNOWN" | string,
-}
 
-export const catchResponseError = (error: Error): CustomResponseError => {
+export const catchResponseError = (error: Error): CustomResponseError<any> => {
 
-    if (error instanceof ErrorValueObject) return { status: 400, type: "INVALID_DATA", message: error.message }
+    if (error instanceof ErrorValueObject) return ErrorValueObject.generateCustomResponse(error.message)
 
     return { status: 500, type: "UNKNOWN", message: "UNKNOWN" }
 

@@ -2,20 +2,23 @@ import { AttributeValue } from "@aws-sdk/client-dynamodb";
 
 export const itemToModel = <T>(item: Record<string, AttributeValue>): T | null => {
 
-    Object.keys(item).forEach(
+    const itemObject = JSON.parse(JSON.stringify(item));
+
+    Object.keys(itemObject).forEach(
         (key) => {
-            const value = Object.values(item[key])[0] ?? null;
-            item[key] = value;
+            const value = Object.values(itemObject[key])[0] ?? null;
+            itemObject[key] = value;
         }
     )
 
     try {
-        const model: T = item as T;
-        return model
-    } catch (error) {
-        console.log(`[error] -> `, error);
-        return null
-    }
 
+        return itemObject as T
+
+    } catch (error) {
+
+        return null
+
+    }
 
 }
